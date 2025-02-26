@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm i",
+    "start": "node server.js",
     "devStart": "nodemon server.js"
   },
   "author": "",
