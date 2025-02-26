@@ -15,7 +15,7 @@ const Analytics = require("./public/models/analytics");
 const User = require("./public/models/user");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI;
 
 const redisClient = redis.createClient();
@@ -41,7 +41,7 @@ app.use(useragent.express());
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: "U29tZVJhbmRvbUJhc2U2NENvZGU",
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false },
@@ -54,8 +54,8 @@ app.use(passport.session());
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientID: "166960059433-gg8th3d1didk2qvgk10ifg4r1oe87sf2.apps.googleusercontent.com ",
+      clientSecret: "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",
       callbackURL: "/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
@@ -200,7 +200,7 @@ app.delete("/api/delete/:id", async (req, res) => {
 
 app.listen(PORT, async () => {
   try {
-    await mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    await mongoose.connect("mongodb+srv://madhavnair700:devatheking7@echorelay.jaedn.mongodb.net/", { useNewUrlParser: true, useUnifiedTopology: true });
     console.log("connected to Mongodb");
   } catch (error) {
     console.error("mongodb connection error:", error);
