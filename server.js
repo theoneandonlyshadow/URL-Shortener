@@ -33,12 +33,11 @@ redisClient.on('connect', () => {
 });
 
 app.set("trust proxy", ["loopback", "linklocal", "uniquelocal"]);
-app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, './public/views'));
+app.use(express.static(__dirname + '/public'));app.set('views', path.join(__dirname, './public/views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(useragent.express());
-app.use(express.static(__dirname + '/public'));
 
 app.use(
   session({
