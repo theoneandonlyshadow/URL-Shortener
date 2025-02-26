@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const shortid = require("shortid");
 const rateLimit = require("express-rate-limit");
 const useragent = require("express-useragent");
-const geoip = require("geoip-lite");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const session = require("express-session");
@@ -16,7 +15,7 @@ const Analytics = require("./public/models/analytics");
 const User = require("./public/models/user");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 const MONGO_URI = process.env.MONGODB_URI;
 
 const redisClient = redis.createClient();
