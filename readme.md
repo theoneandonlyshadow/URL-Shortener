@@ -5,7 +5,7 @@ This project is a comprehensive URL shortener service with advanced features.
 # Note
 
 Sensitive keys are in this codebase. They are added to streamline the deployment after encountering issues with Render. They will be revoked soon.
-![Live demo](https://url-shortener-7lop.onrender.com/)
+[Live demo](https://url-shortener-7lop.onrender.com/)
 
 ## Features
 
