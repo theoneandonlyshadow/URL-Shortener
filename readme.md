@@ -31,6 +31,24 @@ Sensitive keys are in this codebase. They are added to streamline the deployment
     npm install
     ```
 
+## Run with docker
+
+```
+docker build -t urlshortener .
+
+docker run -p 5000:5000 --env-file .env urlshortener
+
+```
+OR
+
+```
+docker-compose up --build
+```
+
+## Note (again):
+
+Render does not support Docker natively, but you can deploy with a Docker-based VPS like DigitalOcean, AWS, or Railway.
+
 ## Usage
 
 1. Start the server:
